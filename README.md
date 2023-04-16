@@ -1,4 +1,4 @@
-# kotlinMvvm
+# Mvvm
 
 kotlin mvvm implementation with databinding,
 Used livedata with mvvm,

@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MyClient {
     object MyClientSingleton {
         fun getClient(): ApiInterface {
-            var BASE_URL = "http://api.androidhive.info"
+            val BASE_URL = "https://5e510330f2c0d300147c034c.mockapi.io/"
             val interceptor = HttpLoggingInterceptor()
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()

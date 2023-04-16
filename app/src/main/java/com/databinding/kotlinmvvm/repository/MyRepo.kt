@@ -8,6 +8,7 @@ import com.databinding.kotlinmvvm.network.MyClient
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.reflect.TypeToken
+import org.json.JSONArray
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,11 +31,11 @@ class MyRepo {
             override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
 
                 if (response.isSuccessful) {
-                    var jsonObject = JSONObject(response.body().toString())
+                    var jsonObject = JSONArray(response.body().toString())
                     mcontact.postValue(
                         Resource.success(
                             Gson().fromJson(
-                                jsonObject.getJSONArray("contacts").toString(),
+                                jsonObject.toString(),
                                 object : TypeToken<List<Contacts>>() {}.type
                             )
                         )
